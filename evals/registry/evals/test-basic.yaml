@@ -6,15 +6,6 @@ test-match:
 test-match.s1.simple-v0:
   class: evals.elsuite.test.match:TestMatch
 
-test_japanese_name_gender:
-  id: test_japanese_name_gender.dev.v0
-  description: We evaluated the ability of GPT to distinguish between Japanese numerical representations and English translations.
-  metrics: [accuracy]
-test_japanese_name_gender.dev.v0:
-  class: evals.elsuite.basic.match:Match
-  args:
-    samples_jsonl: test_japanese_name_gender/samples.jsonl
-
 test-fuzzy-match:
   id: test-fuzzy-match.s1.simple-v0
   description: Example eval that uses fuzzy matching to score completions.
@@ -42,3 +33,12 @@ test-includes-ignore-case.s1.simple-v0:
   args:
     samples_jsonl: test_fuzzy_match/samples.jsonl
     ignore_case: true
+
+test_japanese_name_gender:
+  id: test_japanese_name_gender.dev.v0
+  description: We evaluated the ability of GPT to distinguish between Japanese numerical representations and English translations.
+  metrics: [accuracy]
+test_japanese_name_gender.dev.v0:
+  class: evals.elsuite.basic.match:Match
+  args:
+    samples_jsonl: test_japanese_name_gender/samples.jsonl
